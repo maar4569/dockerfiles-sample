@@ -44,9 +44,7 @@ RUN curl -OL https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.ta
 RUN tar -xvf kibana-4.3.0-linux-x64.tar.gz -C /opt
 EXPOSE 5601
 
-ENTRYPOINT sudo -u esuser /opt/elasticsearch-2.1.0/bin/elasticsearch -d && \
-           /opt/kibana-4.3.0-linux-x64/bin/kibana && \
-           /bin/bash
+ENTRYPOINT /bin/bash
 
 #Do these instrunction below after creating container.
 #1.edit ip in /opt/elasticsearch-2.1.0/config/elasticsearch.yml
